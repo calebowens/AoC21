@@ -1,3 +1,5 @@
+require 'enumerator'
+
 file = File.open('one.txt', chomp: true)
 
 data = file.readlines.map do | entry |
@@ -6,8 +8,8 @@ end
 
 increases = 0
 
-data.drop(1).each_with_index do | element, index |
-    if element > data[index]
+data.each_cons(2) do | first, second |
+    if second > first 
         increases += 1
     end
 end
