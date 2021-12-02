@@ -43,9 +43,7 @@ lines.each do | rawStatement |
         increment = statement.value()
 
         distance += increment
-        if pointer != 0
-            depth += increment * pointer
-        end
+        depth += increment * pointer
     when "down"
         pointer += statement.value()
     when "up"
