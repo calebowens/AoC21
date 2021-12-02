@@ -5,7 +5,7 @@ distance = 0
 
 class Statement < String
     def key()
-        split.first()
+        split[0]
     end
 
     def value()
